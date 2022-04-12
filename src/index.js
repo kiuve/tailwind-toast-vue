@@ -5,7 +5,7 @@ let installed = false
 
 const containerClasses = [
   'z-40', 'fixed', 'inset-0', 'flex', 'flex-col', 'flex-col-reverse', 'items-end', 'justify-start',
-  'px-4', 'py-6', 'pointer-events-none', 'sm:p-6', 'sm:items-end', 'sm:justify-end'
+  'px-4', 'py-6', 'pointer-events-none', 'sm:p-6',
 ]
 
 export default {
