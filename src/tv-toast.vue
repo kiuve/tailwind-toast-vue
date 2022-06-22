@@ -1,5 +1,5 @@
 <template>
-  <!-- div class="z-40 fixed inset-0 flex flex-col-reverse items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-end sm:justify-end'"></div> make sure these dont get purged -->
+  <!-- div class="z-40 fixed inset-0 flex flex-col-reverse items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-end'"></div> make sure these dont get purged -->
   <transition
     enter-active-class="transform ease-out duration-300 transition"
     enter-class="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
