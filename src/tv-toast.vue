@@ -6,9 +6,19 @@
     enter-to-class="translate-y-0 opacity-100 sm:translate-x-0"
     leave-active-class="transform ease-in duration-100"
     leave-class="opacity-100 sm:translate-x-0 translate-y-0"
-    leave-to-class="opacity-0 sm:translate-x-1 translate-y-1 sm:translate-y-0">
-    <div v-if="active && primary === false" :class="classToastAll" class="max-w-sm w-full shadow-lg rounded-lg pointer-events-auto relative mb-4 overflow-hidden">
-      <div v-if="progress && timeout" :class="classTimeout" class="absolute left-0 bottom-0 right-0 h-1 rounded" :style="progressStyle"></div>
+    leave-to-class="opacity-0 sm:translate-x-1 translate-y-1 sm:translate-y-0"
+  >
+    <div
+      v-if="active && primary === false"
+      :class="classToastAll"
+      class="max-w-sm w-full shadow-lg rounded-lg pointer-events-auto relative mb-4 overflow-hidden"
+    >
+      <div
+        v-if="progress && timeout"
+        :class="classTimeout"
+        class="absolute left-0 bottom-0 right-0 h-1 rounded"
+        :style="progressStyle"
+      ></div>
       <div :class="classToastAll" class="rounded-lg shadow-xs overflow-hidden z-100">
         <div class="p-4">
           <div class="flex items-start">
@@ -29,20 +39,25 @@
                 <IconDenied class="w-5 h-5" primary="text-red-400" secondary="text-red-300"></IconDenied>
               </div>
               <div v-if="icon !== false">
-                <component
-                  :is="icon"
-                  :primary="iconPrimary"
-                  :secondary="iconSecondary"
-                  class="w-6 h-6"
-                ></component>
+                <component :is="icon" :primary="iconPrimary" :secondary="iconSecondary" class="w-6 h-6"></component>
               </div>
             </div>
             <div class="ml-3 w-0 flex-1 pt-0.5">
               <p v-if="title" :class="classTitle" class="text-sm leading-5 font-medium">{{ title }}</p>
-              <p :class="[classMessage, {'mt-1': title}]" class="text-sm leading-5" v-html="message"></p>
+              <p :class="[classMessage, { 'mt-1': title }]" class="text-sm leading-5" v-html="message"></p>
             </div>
             <div class="ml-4 flex-shrink-0 flex">
-              <button class="inline-flex text-gray-400 transition ease-in-out duration-150 focus:outline-none focus:text-gray-500" @click="destroy">
+              <button
+                class="
+                  inline-flex
+                  text-gray-400
+                  transition
+                  ease-in-out
+                  duration-150
+                  focus:outline-none focus:text-gray-500
+                "
+                @click="destroy"
+              >
                 <IconTimes class="h-4 w-4" :primary="classClose" :secondary="classClose"></IconTimes>
               </button>
             </div>
@@ -50,8 +65,16 @@
         </div>
       </div>
     </div>
-    <div v-if="active && primary !== false && secondary !== false" :class="classToastAll" class="max-w-md w-full shadow-lg rounded-lg pointer-events-auto mb-4">
-      <div v-if="progress && timeout"  class="absolute left-0 bottom-0 right-0 h-1 rounded bg-gray-100 dark:bg-gray-900" :style="progressStyle"></div>
+    <div
+      v-if="active && primary !== false && secondary !== false"
+      :class="classToastAll"
+      class="max-w-md w-full shadow-lg rounded-lg pointer-events-auto mb-4"
+    >
+      <div
+        v-if="progress && timeout"
+        class="absolute left-0 bottom-0 right-0 h-1 rounded bg-gray-100 dark:bg-gray-900"
+        :style="progressStyle"
+      ></div>
       <div class="flex rounded-lg shadow-xs">
         <div class="w-0 flex-1 flex items-center p-4">
           <div class="flex-shrink-0 mr-4">
@@ -71,34 +94,64 @@
               <IconDenied class="w-5 h-5" primary="text-red-400" secondary="text-red-300"></IconDenied>
             </div>
             <div v-if="icon !== false">
-              <component
-                :is="icon"
-                :primary="iconPrimary"
-                :secondary="iconSecondary"
-                class="w-6 h-6"
-              ></component>
+              <component :is="icon" :primary="iconPrimary" :secondary="iconSecondary" class="w-6 h-6"></component>
             </div>
           </div>
           <div class="w-full">
             <p v-if="title" :class="classTitle" class="text-sm leading-5 font-medium">{{ title }}</p>
-            <p :class="[classMessage, {'mt-1': title}]" class="text-sm leading-5" v-html="message"></p>
+            <p :class="[classMessage, { 'mt-1': title }]" class="text-sm leading-5" v-html="message"></p>
           </div>
         </div>
         <div class="flex border-l border-gray-200">
           <div class="-ml-px flex flex-col">
             <div class="h-0 flex-1 flex border-b border-gray-200">
               <button
-                class="-mb-px flex items-center justify-center w-full rounded-tr-lg border border-transparent px-4 py-3 text-sm leading-5 font-medium transition ease-in-out duration-150 focus:outline-none"
+                class="
+                  -mb-px
+                  flex
+                  items-center
+                  justify-center
+                  w-full
+                  rounded-tr-lg
+                  border border-transparent
+                  px-4
+                  py-3
+                  text-sm
+                  leading-5
+                  font-medium
+                  transition
+                  ease-in-out
+                  duration-150
+                  focus:outline-none
+                "
                 :class="classPrimary"
-                @click="primaryAction">
+                @click="primaryAction"
+              >
                 {{ primary.label }}
               </button>
             </div>
             <div class="-mt-px h-0 flex-1 flex">
               <button
-                class="flex items-center justify-center w-full rounded-br-lg border border-transparent px-4 py-3 text-sm leading-5 font-medium transition ease-in-out duration-150 focus:outline-none"
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  w-full
+                  rounded-br-lg
+                  border border-transparent
+                  px-4
+                  py-3
+                  text-sm
+                  leading-5
+                  font-medium
+                  transition
+                  ease-in-out
+                  duration-150
+                  focus:outline-none
+                "
                 :class="classSecondary"
-                @click="secondaryAction">
+                @click="secondaryAction"
+              >
                 {{ secondary.label }}
               </button>
             </div>
@@ -106,8 +159,16 @@
         </div>
       </div>
     </div>
-    <div v-if="active && primary !== false && secondary === false" :class="classToastAll" class="max-w-md w-full shadow-lg rounded-lg pointer-events-auto mb-4">
-      <div v-if="progress && timeout"  class="absolute left-0 bottom-0 right-0 h-1 rounded bg-gray-100 dark:bg-gray-900"  :style="progressStyle"></div>
+    <div
+      v-if="active && primary !== false && secondary === false"
+      :class="classToastAll"
+      class="max-w-md w-full shadow-lg rounded-lg pointer-events-auto mb-4"
+    >
+      <div
+        v-if="progress && timeout"
+        class="absolute left-0 bottom-0 right-0 h-1 rounded bg-gray-100 dark:bg-gray-900"
+        :style="progressStyle"
+      ></div>
       <div class="rounded-lg shadow-xs overflow-hidden">
         <div class="p-4">
           <div class="flex items-center">
@@ -128,27 +189,46 @@
                 <IconDenied class="w-5 h-5" primary="text-red-400" secondary="text-red-300"></IconDenied>
               </div>
               <div v-if="icon !== false">
-                <component
-                  :is="icon"
-                  :primary="iconPrimary"
-                  :secondary="iconSecondary"
-                  class="w-6 h-6"
-                ></component>
+                <component :is="icon" :primary="iconPrimary" :secondary="iconSecondary" class="w-6 h-6"></component>
               </div>
             </div>
             <div class="w-0 flex-1 flex justify-between">
               <p class="w-0 flex-1 text-sm leading-5" v-html="message"></p>
-              <button
-                class="ml-3 flex-shrink-0 text-sm leading-5 font-medium transition ease-in-out duration-150 focus:outline-none focus:underline'"
-                :class="classSingle"
-                @click="primaryAction"
-              >{{ primary.label }}</button>
             </div>
             <div class="ml-4 flex-shrink-0 flex">
-              <button class="inline-flex text-gray-400 focus:outline-none focus:text-gray-500 transition ease-in-out duration-150" @click="destroy">
+              <button
+                class="
+                  inline-flex
+                  text-gray-400
+                  focus:outline-none focus:text-gray-500
+                  transition
+                  ease-in-out
+                  duration-150
+                "
+                @click="destroy"
+              >
                 <IconTimes class="h-4 w-4" :primary="classClose" :secondary="classClose"></IconTimes>
               </button>
             </div>
+          </div>
+          <div class="buttons">
+            <button
+              class="
+                ml-3
+                flex-shrink-0
+                text-sm
+                leading-5
+                font-medium
+                transition
+                ease-in-out
+                duration-150
+                focus:outline-none focus:underline'
+              "
+              :class="classSingle"
+              @click="primaryAction"
+            >
+              {{ primary.label }}
+            </button>
           </div>
         </div>
       </div>
@@ -157,14 +237,10 @@
 </template>
 
 <script>
-import { removeElement } from './utils.js'
-import {
-  IconCheck,
-  IconBang,
-  IconTimes,
- } from 'tv-icon'
+import { removeElement } from "./utils.js";
+import { IconCheck, IconBang, IconTimes } from "tv-icon";
 export default {
-  components: { IconCheck, IconBang, IconTimes, },
+  components: { IconCheck, IconBang, IconTimes },
   props: {
     title: {
       type: [Boolean, String],
@@ -174,13 +250,15 @@ export default {
     message: {
       type: String,
       required: false,
-      default: 'Please specify a <b>message</b>',
+      default: "Please specify a <b>message</b>",
     },
     type: {
       type: String,
       required: false,
-      validate: (type) => { return ['success', 'info', 'danger', 'warning', 'denied'].includes(type) },
-      default: '',
+      validate: (type) => {
+        return ["success", "info", "danger", "warning", "denied"].includes(type);
+      },
+      default: "",
     },
     progress: {
       type: Boolean,
@@ -195,12 +273,12 @@ export default {
     iconPrimary: {
       type: String,
       required: false,
-      default: '',
+      default: "",
     },
     iconSecondary: {
       type: String,
       required: false,
-      default: '',
+      default: "",
     },
     timeout: {
       type: [Boolean, Number],
@@ -220,42 +298,44 @@ export default {
     classToast: {
       type: String,
       required: false,
-      default: 'bg-white dark:bg-gray-800',
+      default: "bg-white dark:bg-gray-800",
     },
     classTitle: {
       type: String,
       required: false,
-      default: 'text-gray-900 dark:text-gray-100',
+      default: "text-gray-900 dark:text-gray-100",
     },
     classMessage: {
       type: String,
       required: false,
-      default: 'text-gray-500 dark:text-gray-400',
+      default: "text-gray-500 dark:text-gray-400",
     },
     classPrimary: {
       type: String,
       required: false,
-      default: 'text-indigo-600 hover:text-indigo-500 focus:shadow-outline-blue focus:border-blue-300 active:text-indigo-700 active:bg-gray-50',
+      default:
+        "text-indigo-600 hover:text-indigo-500 focus:shadow-outline-blue focus:border-blue-300 active:text-indigo-700 active:bg-gray-50",
     },
     classSecondary: {
       type: String,
       required: false,
-      default: 'text-gray-700 hover:text-gray-500 focus:shadow-outline-blue focus:border-blue-300 active:text-gray-800 active:bg-gray-50',
+      default:
+        "text-gray-700 hover:text-gray-500 focus:shadow-outline-blue focus:border-blue-300 active:text-gray-800 active:bg-gray-50",
     },
     classSingle: {
       type: String,
       required: false,
-      default: 'text-indigo-600 hover:text-indigo-500',
+      default: "text-indigo-600 hover:text-indigo-500",
     },
     classClose: {
       type: String,
       required: false,
-      default: 'text-gray-400 dark:text-gray-600',
+      default: "text-gray-400 dark:text-gray-600",
     },
     classTimeout: {
       type: String,
       required: false,
-      default: 'bg-gray-200 dark:bg-gray-700',
+      default: "bg-gray-200 dark:bg-gray-700",
     },
     defaults: {
       type: Object,
@@ -264,62 +344,60 @@ export default {
     },
   },
 
-  data () {
+  data() {
     return {
       active: false,
       interval: false,
       timeLeft: false,
       speed: 100,
-    }
+    };
   },
 
   computed: {
-    classToastAll () {
+    classToastAll() {
       if (this.defaults && this.defaults.classToast) {
-        return [this.classToast, this.defaults.classToast]
+        return [this.classToast, this.defaults.classToast];
       }
-      if (this.classToast)
-        return [this.classToast]
-      return []
+      if (this.classToast) return [this.classToast];
+      return [];
     },
-   timeLeftPercent () {
-      return Math.round(((this.timeLeft * 100 / (this.timeout * 1000)) * 100) / 100)
-   },
-    progressStyle () {
-      return `width: ${this.timeLeftPercent}%; transition: width 0.1s linear;`
-    }
+    timeLeftPercent() {
+      return Math.round((((this.timeLeft * 100) / (this.timeout * 1000)) * 100) / 100);
+    },
+    progressStyle() {
+      return `width: ${this.timeLeftPercent}%; transition: width 0.1s linear;`;
+    },
   },
 
-  mounted () {
-    this.active = true
+  mounted() {
+    this.active = true;
     if (this.timeout > 0) {
-      this.timeLeft = (this.timeout * 1000)
-      this.interval = setInterval(() => this.updateTime(), this.speed)
+      this.timeLeft = this.timeout * 1000;
+      this.interval = setInterval(() => this.updateTime(), this.speed);
     }
   },
 
   methods: {
-    updateTime () {
-      this.timeLeft -= this.speed
-      if (this.timeLeft === 0)
-        this.destroy()
+    updateTime() {
+      this.timeLeft -= this.speed;
+      if (this.timeLeft === 0) this.destroy();
     },
-    destroy () {
-      this.active = false
-      clearInterval(this.interval)
+    destroy() {
+      this.active = false;
+      clearInterval(this.interval);
       setTimeout(() => {
-        this.$destroy()
-        removeElement(this.$el)
-      }, 1000)
+        this.$destroy();
+        removeElement(this.$el);
+      }, 1000);
     },
-    primaryAction () {
-      this.primary.action()
-      this.destroy()
+    primaryAction() {
+      this.primary.action();
+      this.destroy();
     },
-    secondaryAction () {
-      this.secondary.action()
-      this.destroy()
+    secondaryAction() {
+      this.secondary.action();
+      this.destroy();
     },
   },
-}
+};
 </script>
