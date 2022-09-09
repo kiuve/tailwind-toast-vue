@@ -192,7 +192,7 @@
                 <component :is="icon" :primary="iconPrimary" :secondary="iconSecondary" class="w-6 h-6"></component>
               </div>
             </div>
-            <div class="w-0 flex-1 flex justify-between">
+            <div class="w-full">
               <p v-if="title" :class="classTitle" class="text-sm leading-5 font-medium">{{ title }}</p>
              <p :class="[classMessage, { 'mt-1': title }]" class="text-sm leading-5" v-html="message"></p>
             </div>
