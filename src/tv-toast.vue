@@ -193,7 +193,8 @@
               </div>
             </div>
             <div class="w-0 flex-1 flex justify-between">
-              <p class="w-0 flex-1 text-sm leading-5" v-html="message"></p>
+              <p v-if="title" :class="classTitle" class="text-sm leading-5 font-medium">{{ title }}</p>
+             <p :class="[classMessage, { 'mt-1': title }]" class="text-sm leading-5" v-html="message"></p>
             </div>
             <div class="ml-4 flex-shrink-0 flex">
               <button
@@ -211,7 +212,7 @@
               </button>
             </div>
           </div>
-          <div class="buttons">
+          <div class="buttons mt-4 ml-4">
             <button
               class="
                 ml-3
