@@ -161,8 +161,10 @@
     </div>
     <div
       v-if="active && primary !== false && secondary === false"
+      :class="[classToastAll, {'hidden': !active}]"
       class="max-w-md w-full shadow-lg rounded-lg pointer-events-auto mb-4"
     >
+      >
       <div
         v-if="progress && timeout"
         class="absolute left-0 bottom-0 right-0 h-1 rounded bg-gray-100 dark:bg-gray-900"
@@ -193,7 +195,7 @@
             </div>
             <div class="w-full">
               <p v-if="title" :class="classTitle" class="text-sm leading-5 font-medium">{{ title }}</p>
-             <p :class="[classMessage, { 'mt-1': title }]" class="text-sm leading-5" v-html="message"></p>
+              <p :class="[classMessage, { 'mt-1': title }]" class="text-sm leading-5" v-html="message"></p>
             </div>
             <div class="ml-4 flex-shrink-0 flex">
               <button
