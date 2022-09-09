@@ -796,7 +796,7 @@ let installed = false
 
 const containerClasses = [
   'z-40', 'fixed', 'inset-0', 'flex', 'flex-col', 'flex-col-reverse', 'items-end', 'justify-start',
-  'px-4', 'py-6', 'pointer-events-none', 'sm:p-6',
+  'px-4', 'py-6', 'pointer-events-auto', 'sm:p-6',
 ]
 
 /* harmony default export */ var src_0 = ({
