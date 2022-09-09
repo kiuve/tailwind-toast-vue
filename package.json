@@ -1,6 +1,6 @@
 {
-  "name": "tailwind-toast-notifications",
-  "version": "1.2.33",
+  "name": "tw-toast-notifications",
+  "version": "1.0.0",
   "description": "programmatic toasts for NuxtJS powered by TailwindCSS",
   "main-dev": "src/index.js",
   "main": "dist/tv-toast.umd.min.js",
