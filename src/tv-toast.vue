@@ -164,7 +164,6 @@
       :class="[classToastAll, {'hidden': !active}]"
       class="max-w-md w-full shadow-lg rounded-lg pointer-events-auto mb-4"
     >
-      >
       <div
         v-if="progress && timeout"
         class="absolute left-0 bottom-0 right-0 h-1 rounded bg-gray-100 dark:bg-gray-900"
