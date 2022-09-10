@@ -161,7 +161,7 @@
     </div>
     <div
       v-if="active && primary !== false && secondary === false"
-      :class="[classToastAll, {'hidden': !active}]"
+      :class="[classToastAll, {'hidden': active}]"
       class="max-w-md w-full shadow-lg rounded-lg pointer-events-auto mb-4"
     >
       <div
@@ -371,7 +371,7 @@ export default {
   },
 
   mounted() {
-    this.active = false;
+    this.active = true;
     if (this.timeout > 0) {
       this.timeLeft = this.timeout * 1000;
       this.interval = setInterval(() => this.updateTime(), this.speed);
@@ -389,6 +389,7 @@ export default {
       setTimeout(() => {
         this.$destroy();
         removeElement(this.$el);
+        document.getElementById("toasts").classList.add('hidden')
       }, 1000);
     },
     primaryAction() {
