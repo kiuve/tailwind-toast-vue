@@ -371,7 +371,7 @@ export default {
   },
 
   mounted() {
-    this.active = true;
+    this.active = false;
     if (this.timeout > 0) {
       this.timeLeft = this.timeout * 1000;
       this.interval = setInterval(() => this.updateTime(), this.speed);
