@@ -161,7 +161,7 @@
     </div>
     <div
       v-if="active && primary !== false && secondary === false"
-      :class="[classToastAll, {'hidden': active}]"
+      :class="classToastAll"
       class="max-w-md w-full shadow-lg rounded-lg pointer-events-auto mb-4"
     >
       <div

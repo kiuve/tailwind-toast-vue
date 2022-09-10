@@ -1,6 +1,6 @@
 {
   "name": "tw-vue-notifications",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "programmatic toasts for NuxtJS powered by TailwindCSS",
   "main-dev": "src/index.js",
   "main": "dist/tv-toast.umd.min.js",
